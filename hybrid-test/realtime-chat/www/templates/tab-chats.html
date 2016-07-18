@@ -1,0 +1,34 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="chat in chats">
+        <img>
+        <H2>{{chat.user}}</h2>
+        <p>{{chat.message}}</p>
+      </a>
+    </div>
+
+    <form>
+      <div class="list">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Message" ng-model="chat.message" style="">
+          </label>
+
+          <button class="button button-positive ion ion-chatbubble" ng-click="sendChat(chat)"></button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAYxe6Gqdv9IUltPO0OWs0f5NZ_D3qidZE",
+    authDomain: "apptest-b96d1.firebaseapp.com",
+    databaseURL: "https://apptest-b96d1.firebaseio.com",
+    storageBucket: "apptest-b96d1.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
